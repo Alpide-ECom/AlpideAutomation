@@ -12,7 +12,7 @@ public class LoginPageTest extends BaseTest {
 	@Test
 	public void  userloginWithValidDetails()
 	{
-		
+		System.out.println("hello amir");
 	}
 	
 	
