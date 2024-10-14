@@ -1,0 +1,5 @@
+package com.qa.alpide.pages;
+
+public class DashboardPage {
+
+}
