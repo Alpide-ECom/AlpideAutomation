@@ -13,10 +13,10 @@ public class BaseTest {
 	
 	WebDriver driver;
 	DriverFactory df;
-	DashboardPage dashboardPage;
-	LoginPage loginPage;
+	protected DashboardPage dashboardPage;
+	protected LoginPage loginPage;
 
-	LoginPage lpage = new LoginPage(driver);
+	//LoginPage lpage = newLoginPage(driver);
 	
 	@BeforeMethod
 	public void setUp()
@@ -25,15 +25,15 @@ public class BaseTest {
 		driver = df.initDriver();
 		dashboardPage = new DashboardPage(driver);
 		loginPage = new LoginPage(driver);
-		lpage = new LoginPage(driver);
+		//lpage = new LoginPage(driver);
 		
 	}
 	
 	@AfterMethod
 	public void browserClose()
 	{
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 		
 	}
 	

@@ -1,5 +1,7 @@
 package com.qa.alpide.pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,6 +11,7 @@ public class LoginPage {
 	
 	private WebDriver driver;
 	DriverFactory df= new DriverFactory();
+	Properties prop = df.initProperties();
 	
 	public LoginPage(WebDriver driver)
 	{
@@ -21,10 +24,10 @@ public class LoginPage {
 	
 	
 	
-	public DashboardPage userLogin(String userEmail, String pass)
+	public DashboardPage userLogin()
 	{
-		driver.findElement(email).sendKeys(userEmail);
-		driver.findElement(password).sendKeys(pass);
+		driver.findElement(email).sendKeys(prop.getProperty("email"));
+		driver.findElement(password).sendKeys(prop.getProperty("pass"));
 		driver.findElement(loginBtn).click();
 		return new DashboardPage(driver);
 	}

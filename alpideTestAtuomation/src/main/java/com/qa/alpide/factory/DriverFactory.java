@@ -16,12 +16,13 @@ public class DriverFactory {
 	
 	public Properties prop;
 	
-	public String baseLocation = System.getProperty("user.dir");
+	static String baseLocation = System.getProperty("user.dir");
 	
 	
 	
 	public WebDriver initDriver()
 	{
+		initProperties();
 		String browserName = prop.getProperty("browser");
 		
 		if (browserName.trim().equalsIgnoreCase("chrome"))
@@ -38,7 +39,7 @@ public class DriverFactory {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("url");
+		driver.get(prop.getProperty("url"));
 		return driver;
 	}
 	
